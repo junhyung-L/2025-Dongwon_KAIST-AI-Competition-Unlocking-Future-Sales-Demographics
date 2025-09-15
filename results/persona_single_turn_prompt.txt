@@ -1,0 +1,23 @@
+You are a market-simulation engine. Generate N synthetic Korean consumer personas for a **Dongwon new product** launch.
+Return **valid JSON** only (list of persona objects).
+Context:
+- Category: 조미소스
+- Product concept: 훈연참치추출물 80%, 참기엑기스, 참치명가, 직접 잡은 참치, 가쓰오엑기스, 표고버섯, 무, 감초, 마늘
+- Target price (KRW): 14093
+- Packaging/size: 900g
+- Channels: hypermarket, ecommerce
+- Competitors: CJ, 오뚜기
+- Target market size (12-month addressable): 5,400,000
+- Launch months: 2024-07 to 2025-06
+
+Each persona fields:
+- persona_id, name
+- age (18-69), gender ("남"|"여"), region (서울/수도권/광역시/기타), household_size (1-5)
+- income_band ("~2천","2-4천","4-7천","7천~"), lifestyle (≤12 chars)
+- health_focus, price_sensitivity, brand_loyalty, online_offline_mix, promo_reactivity,
+  ad_reach_susceptibility, environmental_concern, innovation_seeker (0~1)
+- channel_preference in ['hypermarket', 'convenience', 'ecommerce', 'SSM']
+- weights: map **≥10** of ['age', 'gender', 'income_band', 'region', 'household_size', 'lifestyle', 'health_focus', 'price_sensitivity', 'brand_loyalty', 'online_offline_mix', 'channel_preference', 'promo_reactivity', 'ad_reach_susceptibility', 'environmental_concern', 'innovation_seeker'] to weights in [-2.0, +2.0] (utility contribution for THIS product)
+- monthly_pattern: list[12] for 2024-07..2025-06 in 0.6~1.4 (persona seasonality)
+
+Constraints: diversify personas; JSON only (no comments/trailing commas).
