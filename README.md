@@ -14,8 +14,9 @@
 - **기간:** 2024-07 ~ 2025-06 (총 12개월 예측)
 - **주최/주관:** 동원그룹, KAIST  
 - **후원:** AWS, MS, PwC  
-- **운영:** 데이콘  
-- **참고 논문:** Brand, Israeli, Ngwe (2024) *Using LLMs for Market Research*
+- **운영:** 데이콘
+  
+![포스터](https://cdn.ceorankingnews.com/news/photo/202508/92749_74189_012.png)
 
 ---
 
@@ -90,5 +91,5 @@
 
 ## 참고 문헌
 
-- Brand, J., Israeli, A., Ngwe, D. (2024). Using LLMs for Market Research.
+- Brand, J., Israeli, A., Ngwe, D. (2024). [*Using LLMs for Market Research*](https://www.hbs.edu/faculty/Publication%20Files/23-062_d53f52d1-2b0c-40a7-a4ad-d87b715d2a5d.pdf)
 ---
