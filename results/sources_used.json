@@ -1,0 +1,10 @@
+[
+  {
+    "kind": "paper",
+    "title": "Using LLMs for Market Research (Brand, Israeli, Ngwe, 2024)",
+    "url": "(local pdf)",
+    "how_used": "LLM-as-simulator 절차/싱글턴 프롬프트 설계",
+    "notes": "",
+    "added_at": "2025-08-26T21:25:50.439873"
+  }
+]
