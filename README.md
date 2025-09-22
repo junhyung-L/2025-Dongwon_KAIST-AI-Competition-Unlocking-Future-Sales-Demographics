@@ -68,8 +68,8 @@
 - **노이즈**: 로그노멀 분산으로 현실성 확보  
 
 **출력:**  
-- `results/submission.csv` (제출용)  
-- `results/monthly_forecast.csv` (디버깅용)  
+- [submission.csv](results/submission_3.csv) (제출용)  
+- [monthly_forecast.csv](results/monthly_forecast.csv) (디버깅용)  
 
 ---
 
