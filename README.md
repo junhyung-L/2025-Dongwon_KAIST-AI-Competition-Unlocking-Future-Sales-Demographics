@@ -1,27 +1,94 @@
 # 🛒 2025 Dongwon x KAIST AI Competition
-## Next-Gen Sales Demand Forecasting via LLM-driven Persona Simulation
 
-### 📌 Project Vision
-Traditional demand forecasting fails for new products with zero historical sales. This project implements a **"Synthetic Market Research"** approach, simulating 12 months of sales behavior by creating autonomous AI consumer personas that interact with marketing variables (Price, GRP, ACV).
+## 🚀 Next-Gen Sales Demand Forecasting via LLM-driven Persona Simulation
 
-### 🏆 Competition Highlights
-- **Host:** Dongwon Group, KAIST.
-- **Goal:** Predict monthly sales volume (July 2024 - June 2025) for unreleased products.
-- **Tech Stack:** OpenAI API, Python, LightGBM, Monte Carlo Simulation.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
+![License](https://img.shields.io/badge/License-MIT-green.svg)
+![Competition](https://img.shields.io/badge/Status-Completed-orange.svg)
 
-### 🛠️ Core Analytical Innovation
-1. **LLM Persona Engine:** 
-   - Dynamically generated 10+ distinct consumer segments (e.g., "Quality-obsessed Parents", "Convenience-seeking Gen-Z") using **OpenAI GPT Models**.
-   - Each persona is assigned weighted attributes: Price Sensitivity, Brand Loyalty, and Marketing Receptivity.
-2. **Monte Carlo Simulation:** 
-   - Simulated individual purchase probability across 12 months.
-   - Integrated **Market Calendar** variables: TV/YouTube Ad GRPs, Distribution (ACV), and Promotion discounts.
-3. **Naver Shopping API Integration:** 
-   - Automated real-time competitor price tracking to refine demand elasticity parameters.
+This repository contains the project for the **'2025 Dongwon x KAIST AI Competition'**. The project focuses on predicting monthly sales volume for unreleased products by simulating a synthetic market using LLMs and stochastic modeling.
 
-### 📊 Analytical ROI
-- **Adaptability:** Successfully predicted demand trends for products with high seasonal variability (e.g., High-Protein Yogurt).
-- **Strategy:** Provided actionable insights for marketing budget allocation based on Persona-specific GRP sensitivity.
+---
+
+## 🚀 Executive Summary
+- **The Problem**: Predicting monthly sales volume for unreleased products with zero historical sales (Cold-Start Problem).
+- **The Solution**: Developed a Synthetic Market Research framework simulating 12 months of sales behavior using LLM-generated personas and Monte Carlo simulation.
+- **The Result**: Successfully captured seasonal trends and marketing sensitivity, providing a scalable way to run "What-If" scenarios before launch.
+
+---
+
+## 🛠️ Tech Stack
+- **Core Logic**: Python
+- **Generative AI**: Google Gemini API
+- **Machine Learning**: LightGBM
+- **Simulation**: Monte Carlo Method
+- **Data Processing**: Pandas, NumPy
+
+---
+
+## 📌 1. Problem Definition
+- **Background**: Traditional demand forecasting fails for new products with zero historical sales.
+- **Objective**: To solve the "cold-start" problem in demand forecasting by creating a simulation engine that mimics real consumer behavior.
+- **Vision**: "Empowering product managers with data-driven 'What-If' scenario testing before launch."
+
+---
+
+## 🔬 2. Methodology & Architecture
+Our approach integrates Generative AI, Machine Learning, and Stochastic Simulation into a unified pipeline:
+
+### 2.1 System Architecture
+```mermaid
+graph TD
+    A[Product Info CSV] --> B(LLM Adapter)
+    B -->|Generate| C[Persona Cache]
+    A --> D(Naver Price Search)
+    D --> E[Category Prices CSV]
+    E --> F(LightGBM Trainer)
+    F -->|Model| G[Price Model PKL]
+    
+    C --> H(Simulation Engine)
+    G --> H
+    A --> H
+    
+    H -->|Monte Carlo Ensemble| I[Final Demand Forecast]
+    I --> J[Submission CSV]
+```
+
+### 2.2 Core Components
+- **LLM Persona Engine**: Generates highly specific consumer segments (Age, Income, Lifestyle, Channel Preference) with unique utility functions. Uses a SHA-1 signature-based caching system to guarantee reproducibility.
+- **Price Intelligence (ML)**: Scrapes competitor prices via Naver API and trains a LightGBM Regressor to predict optimal list prices. *(Note: Trained on a small sample of 12 rows for PoC; pipeline is designed to scale.)*
+- **Monte Carlo Simulation**: Simulates individual purchase decisions across 12 months, factoring in Advertising GRPs, Distribution (ACV), and Seasonal trends.
+
+---
+
+## 📊 3. Results & Impact
+- **Accurate Cold-Start Forecasting**: Successfully generated a 12-month demand curve for products with no prior sales history.
+- **Behavioral Realism**: Captured the complex interplay between marketing spend (Ad GRPs), distribution ramp-up, and consumer price sensitivity.
+- **Business Application**: This framework allows Dongwon to run scenarios (e.g., "What if we increase price by 10% and double ad spend?") before actual product launch.
+
+### ⚠️ Technical Notes & Limitations
+- **Model Performance**: The LightGBM model was trained on a sample of 12 rows (yielding R² ~0.0). This serves as a structural Proof-of-Concept. For production use, the scraper should be run at scale to gather larger training datasets.
+- **Simulation Scale**: The pipeline defaults to 400 personas for robust simulation, though cached results may show smaller batches used during testing to optimize API costs.
+
+---
+
+## ⚙️ 4. Reproducibility
+The entire pipeline is modularized into `forecast_pipeline.py`. Follow these steps to reproduce the results.
+
+### 4.1 Gather Competitor Prices
+```bash
+python forecast_pipeline.py gather_prices --product_csv product_info.csv
+```
+
+### 4.2 Train Price Prediction Model
+```bash
+python forecast_pipeline.py train_price_model --prices_csv category_prices.csv
+```
+
+### 4.3 Run Simulation & Generate Submission
+```bash
+python forecast_pipeline.py make_submission --product_csv product_info.csv --use_llm 0 --mc_runs 7
+```
 
 ---
 *This repository has been refined for the professional [Data Analyst Portfolio](https://github.com/junhyung-L).*
