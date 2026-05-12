@@ -10,14 +10,14 @@ This repository contains the project for the **'2025 Dongwon x KAIST AI Competit
 
 ---
 
-## 🚀 Executive Summary
+## 🚀 Executive Summary (TL;DR)
 - **The Problem**: Predicting monthly sales volume for unreleased products with zero historical sales (Cold-Start Problem).
 - **The Solution**: Developed a Synthetic Market Research framework simulating 12 months of sales behavior using LLM-generated personas and Monte Carlo simulation.
 - **The Result**: Successfully captured seasonal trends and marketing sensitivity, providing a scalable way to run "What-If" scenarios before launch.
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack (기술 스택)
 - **Core Logic**: Python
 - **Generative AI**: Google Gemini API
 - **Machine Learning**: LightGBM
@@ -26,14 +26,14 @@ This repository contains the project for the **'2025 Dongwon x KAIST AI Competit
 
 ---
 
-## 📌 1. Problem Definition
+## 📌 1. Problem Definition (문제 정의)
 - **Background**: Traditional demand forecasting fails for new products with zero historical sales.
 - **Objective**: To solve the "cold-start" problem in demand forecasting by creating a simulation engine that mimics real consumer behavior.
 - **Vision**: "Empowering product managers with data-driven 'What-If' scenario testing before launch."
 
 ---
 
-## 🔬 2. Methodology & Architecture
+## 🔬 2. Methodology & Architecture (방법론 및 아키텍처)
 Our approach integrates Generative AI, Machine Learning, and Stochastic Simulation into a unified pipeline:
 
 ### 2.1 System Architecture
@@ -61,7 +61,7 @@ graph TD
 
 ---
 
-## 📊 3. Results & Impact
+## 📊 3. Results & Impact (결과 및 임팩트)
 - **Accurate Cold-Start Forecasting**: Successfully generated a 12-month demand curve for products with no prior sales history.
 - **Behavioral Realism**: Captured the complex interplay between marketing spend (Ad GRPs), distribution ramp-up, and consumer price sensitivity.
 - **Business Application**: This framework allows Dongwon to run scenarios (e.g., "What if we increase price by 10% and double ad spend?") before actual product launch.
@@ -90,7 +90,7 @@ graph TD
 
 ---
 
-## ⚙️ 4. Reproducibility
+## ⚙️ 4. Reproducibility (재현성)
 The entire pipeline is modularized into `forecast_pipeline.py`. Follow these steps to reproduce the results.
 
 ### 4.1 Gather Competitor Prices
@@ -109,4 +109,4 @@ python forecast_pipeline.py make_submission --product_csv product_info.csv --use
 ```
 
 ---
-*This repository has been refined for the professional [Data Analyst Portfolio](https://github.com/junhyung-L).*
+*This repository has been refined for the professional [Data Analyst Portfolio](https://github.com/junhyung-L/Resume/blob/main/Portfolio/README.md).*
