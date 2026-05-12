@@ -4,7 +4,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
-![Competition](https://img.shields.io/badge/Status-Completed-success.svg)
+![Competition](https://img.shields.io/badge/Status-Completed-orange.svg)
 
 This repository contains the project for the **'2025 Dongwon x KAIST AI Competition'**. The project focuses on predicting monthly sales volume for unreleased products by simulating a synthetic market using LLMs and stochastic modeling.
 
