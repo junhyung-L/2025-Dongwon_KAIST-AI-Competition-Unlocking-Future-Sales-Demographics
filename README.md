@@ -1,6 +1,6 @@
 # 🛒 2025 Dongwon x KAIST AI Competition
 
-## 🚀 Next-Gen Sales Demand Forecasting via LLM-driven Persona Simulation
+## Next-Gen Sales Demand Forecasting via LLM-driven Persona Simulation
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
