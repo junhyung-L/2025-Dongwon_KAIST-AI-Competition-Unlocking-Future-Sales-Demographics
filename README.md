@@ -72,6 +72,24 @@ graph TD
 
 ---
 
+## 📁 Repository Structure
+```text
+├── notebooks/                  # Jupyter notebooks for experimentation
+│   ├── 01_experiments_pipeline.ipynb
+│   └── 02_final_demand_forecast.ipynb
+├── data/                       # Input data files
+│   ├── category_prices.csv     # Competitor prices gathered from Naver
+│   └── product_info.csv        # Product specifications for forecasting
+├── results/                    # Output files and reports
+│   ├── monthly_forecast.csv
+│   └── submission_3.csv        # Final submission file
+├── forecast_pipeline.py        # Master pipeline script (Gather prices, Train, Predict)
+├── simulation_pipeline.py      # Simulation logic
+└── README.md                   # Project documentation
+```
+
+---
+
 ## ⚙️ 4. Reproducibility
 The entire pipeline is modularized into `forecast_pipeline.py`. Follow these steps to reproduce the results.
 
